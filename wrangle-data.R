@@ -1,0 +1,6 @@
+library(tidyverse)
+murders <- read_csv("data/murders.csv")
+murders
+murders <- murders %>% mutate( region = factor(region),rate = total / population * 10^5 )
+murders
+save(murders,file="rda/murders.rda")
